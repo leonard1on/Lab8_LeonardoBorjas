@@ -1040,38 +1040,34 @@ public class Main extends javax.swing.JFrame {
                 nombre.add(new DefaultMutableTreeNode(c.getGenero()));
             }
 
-            int centinela = -1;
+            DefaultMutableTreeNode algo=new DefaultMutableTreeNode();
+            boolean nodo = false;
             for (int i = 0; i < n2.getChildCount(); i++) {
                 if (n2.getChildAt(i).toString().equals(Integer.toString(c.getEdad()))) {
-                    
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
-                    p.add(new DefaultMutableTreeNode(c.getEdad()));
-                    p.add(new DefaultMutableTreeNode(c.getTelefono()));
-                    p.add(new DefaultMutableTreeNode(c.getCorreo()));
-                    p.add(new DefaultMutableTreeNode(c.getDireccion()));
-                    p.add(new DefaultMutableTreeNode(c.getGenero()));
-                    ((DefaultMutableTreeNode) n2.getChildAt(i)).add(p);
-                    centinela = 1;
+                    nodo = true;
+                    algo=((DefaultMutableTreeNode) n2.getChildAt(i));
+                    i = n2.getChildCount() + 1;
                 }
+            }
+            if (nodo) {
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
+                p.add(new DefaultMutableTreeNode(c.getEdad()));
+                p.add(new DefaultMutableTreeNode(c.getTelefono()));
+                p.add(new DefaultMutableTreeNode(c.getCorreo()));
+                p.add(new DefaultMutableTreeNode(c.getDireccion()));
+                p.add(new DefaultMutableTreeNode(c.getGenero()));
+                algo.add(p);
 
-                if (centinela == -1) {
-
-                    DefaultMutableTreeNode edad = new DefaultMutableTreeNode(Integer.toString(c.getEdad()));
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
-                    p.add(new DefaultMutableTreeNode(c.getEdad()));
-                    p.add(new DefaultMutableTreeNode(c.getTelefono()));
-                    p.add(new DefaultMutableTreeNode(c.getCorreo()));
-                    p.add(new DefaultMutableTreeNode(c.getDireccion()));
-                    p.add(new DefaultMutableTreeNode(c.getGenero()));
-                    edad.add(p);
-                    n2.add(edad);
-                    i=n2.getChildCount()+1;
-                    /* DefaultMutableTreeNode edad=new DefaultMutableTreeNode(Integer.toString(c.getEdad()));
-                    DefaultMutableTreeNode p=new DefaultMutableTreeNode(new Persona(nombre,edad,nacionalidad));
-                    n.add(p);
-                    m.add(n);*/
-                }
-
+            } else {
+                DefaultMutableTreeNode edad = new DefaultMutableTreeNode(Integer.toString(c.getEdad()));
+                DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
+                p.add(new DefaultMutableTreeNode(c.getEdad()));
+                p.add(new DefaultMutableTreeNode(c.getTelefono()));
+                p.add(new DefaultMutableTreeNode(c.getCorreo()));
+                p.add(new DefaultMutableTreeNode(c.getDireccion()));
+                p.add(new DefaultMutableTreeNode(c.getGenero()));
+                edad.add(p);
+                n2.add(edad);
             }
             agenda.setModel(m);
         }
