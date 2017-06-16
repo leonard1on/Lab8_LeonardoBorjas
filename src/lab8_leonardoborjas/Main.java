@@ -13,6 +13,8 @@ import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -49,7 +51,7 @@ public class Main extends javax.swing.JFrame {
         Ccorreo = new javax.swing.JTextField();
         Cdireccion = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        m = new javax.swing.JRadioButton();
+        me = new javax.swing.JRadioButton();
         f = new javax.swing.JRadioButton();
         jLabel25 = new javax.swing.JLabel();
         CMod = new javax.swing.JDialog();
@@ -109,16 +111,18 @@ public class Main extends javax.swing.JFrame {
         Ffecha = new com.toedter.calendar.JDateChooser();
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        Llamada = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        agenda = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Registrar Contacto");
@@ -140,9 +144,9 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(m);
-        m.setSelected(true);
-        m.setText("M");
+        buttonGroup1.add(me);
+        me.setSelected(true);
+        me.setText("M");
 
         buttonGroup1.add(f);
         f.setText("F");
@@ -186,7 +190,7 @@ public class Main extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CcrearLayout.createSequentialGroup()
-                                .addComponent(m)
+                                .addComponent(me)
                                 .addGap(18, 18, 18)
                                 .addComponent(f))
                             .addComponent(jButton5))))
@@ -219,7 +223,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(Cdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(m)
+                    .addComponent(me)
                     .addComponent(f)
                     .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -679,6 +683,17 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        javax.swing.GroupLayout LlamadaLayout = new javax.swing.GroupLayout(Llamada.getContentPane());
+        Llamada.getContentPane().setLayout(LlamadaLayout);
+        LlamadaLayout.setHorizontalGroup(
+            LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        LlamadaLayout.setVerticalGroup(
+            LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 374, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Contactos"));
@@ -704,11 +719,16 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Agenda");
+        jButton4.setText("Refrescar Agenda");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Contactos");
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        agenda.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(agenda);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -717,7 +737,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -763,7 +783,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jButton8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
+                .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -776,6 +796,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton15.setText("Llamada");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -783,16 +805,20 @@ public class Main extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton15)
+                .addContainerGap())
         );
 
         pack();
@@ -825,7 +851,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         String genero = "";
-        if (m.isSelected()) {
+        if (me.isSelected()) {
             genero = "Masculino";
         } else {
             genero = "Femenino";
@@ -848,7 +874,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         String genero = "";
-        if (m.isSelected()) {
+        if (me.isSelected()) {
             genero = "Masculino";
         } else {
             genero = "Femenino";
@@ -915,8 +941,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        DateFormat df=new SimpleDateFormat("MM/dd/yyyy");        
-        String date=df.format(Mfecha.getDate());
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String date = df.format(Mfecha.getDate());
         Mensaje mensaje = new Mensaje(administrador, (Contacto) Mreceptor.getSelectedItem(), date, Mtexto.getText());
         administrador.getBuzon().add(mensaje);
 
@@ -969,8 +995,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        DateFormat df=new SimpleDateFormat("MM/dd/yyyy");        
-        String date=df.format(Ffecha.getDate());
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String date = df.format(Ffecha.getDate());
         DefaultTableModel t = (DefaultTableModel) Ftabla.getModel();
         while (t.getRowCount() > 0) {
             t.removeRow(0);
@@ -982,6 +1008,74 @@ public class Main extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        agenda.setModel(new DefaultTreeModel(new DefaultMutableTreeNode("Contactos")));
+
+        DefaultTreeModel m = (DefaultTreeModel) agenda.getModel();
+        DefaultMutableTreeNode n = (DefaultMutableTreeNode) m.getRoot();
+        DefaultMutableTreeNode n2 = (DefaultMutableTreeNode) m.getRoot();
+
+        DefaultMutableTreeNode a = new DefaultMutableTreeNode("Masculino");
+        DefaultMutableTreeNode b = new DefaultMutableTreeNode("Femenino");
+        n.add(a);
+        n.add(b);
+
+        for (Contacto c : contactos) {
+            DefaultMutableTreeNode nombre = new DefaultMutableTreeNode(c.getNombre());
+            if (c.getGenero().equals("Masculino")) {
+                a.add(nombre);
+                nombre.add(new DefaultMutableTreeNode(c.getEdad()));
+                nombre.add(new DefaultMutableTreeNode(c.getTelefono()));
+                nombre.add(new DefaultMutableTreeNode(c.getCorreo()));
+                nombre.add(new DefaultMutableTreeNode(c.getDireccion()));
+                nombre.add(new DefaultMutableTreeNode(c.getGenero()));
+            } else {
+                b.add(nombre);
+                nombre.add(new DefaultMutableTreeNode(c.getEdad()));
+                nombre.add(new DefaultMutableTreeNode(c.getTelefono()));
+                nombre.add(new DefaultMutableTreeNode(c.getCorreo()));
+                nombre.add(new DefaultMutableTreeNode(c.getDireccion()));
+                nombre.add(new DefaultMutableTreeNode(c.getGenero()));
+            }
+
+            int centinela = -1;
+            for (int i = 0; i < n2.getChildCount(); i++) {
+                if (n2.getChildAt(i).toString().equals(Integer.toString(c.getEdad()))) {
+                    
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
+                    p.add(new DefaultMutableTreeNode(c.getEdad()));
+                    p.add(new DefaultMutableTreeNode(c.getTelefono()));
+                    p.add(new DefaultMutableTreeNode(c.getCorreo()));
+                    p.add(new DefaultMutableTreeNode(c.getDireccion()));
+                    p.add(new DefaultMutableTreeNode(c.getGenero()));
+                    ((DefaultMutableTreeNode) n2.getChildAt(i)).add(p);
+                    centinela = 1;
+                }
+
+                if (centinela == -1) {
+
+                    DefaultMutableTreeNode edad = new DefaultMutableTreeNode(Integer.toString(c.getEdad()));
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode(c.getNombre());
+                    p.add(new DefaultMutableTreeNode(c.getEdad()));
+                    p.add(new DefaultMutableTreeNode(c.getTelefono()));
+                    p.add(new DefaultMutableTreeNode(c.getCorreo()));
+                    p.add(new DefaultMutableTreeNode(c.getDireccion()));
+                    p.add(new DefaultMutableTreeNode(c.getGenero()));
+                    edad.add(p);
+                    n2.add(edad);
+                    i=n2.getChildCount()+1;
+                    /* DefaultMutableTreeNode edad=new DefaultMutableTreeNode(Integer.toString(c.getEdad()));
+                    DefaultMutableTreeNode p=new DefaultMutableTreeNode(new Persona(nombre,edad,nacionalidad));
+                    n.add(p);
+                    m.add(n);*/
+                }
+
+            }
+            agenda.setModel(m);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1034,6 +1128,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel Fecha;
     private com.toedter.calendar.JDateChooser Ffecha;
     private javax.swing.JTable Ftabla;
+    private javax.swing.JDialog Llamada;
     private javax.swing.JRadioButton M;
     private javax.swing.JPanel Main;
     private javax.swing.JDialog Mbuzon;
@@ -1049,6 +1144,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Mreceptor;
     private javax.swing.JTextField Mtelefono;
     private javax.swing.JTextArea Mtexto;
+    private javax.swing.JTree agenda;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JRadioButton f;
@@ -1058,6 +1154,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1100,8 +1197,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTree jTree1;
-    private javax.swing.JRadioButton m;
+    private javax.swing.JRadioButton me;
     // End of variables declaration//GEN-END:variables
     ArrayList<Contacto> contactos = new ArrayList();
 
