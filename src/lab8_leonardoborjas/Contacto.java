@@ -17,18 +17,20 @@ public class Contacto {
     private int telefono;
     private String correo;
     private String direccion;
-    private ArrayList<Mensaje> buzon;
+    private ArrayList<Mensaje> buzon=new ArrayList();
+    private String genero;
     
 
     public Contacto() {
     }
 
-    public Contacto(String nombre, int edad, int telefono, String correo, String direccion) {
+    public Contacto(String nombre, int edad, int telefono, String correo, String direccion, String genero) {
         this.nombre = nombre;
         this.edad = edad;
         this.telefono = telefono;
         this.correo = correo;
         this.direccion = direccion;
+        this.genero=genero;
     }
 
     public String getNombre() {
@@ -77,6 +79,14 @@ public class Contacto {
 
     public void setBuzon(ArrayList<Mensaje> buzon) {
         this.buzon = buzon;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     

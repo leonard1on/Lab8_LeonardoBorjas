@@ -6,9 +6,13 @@
 package lab8_leonardoborjas;
 
 import java.awt.CardLayout;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -45,6 +49,9 @@ public class Main extends javax.swing.JFrame {
         Ccorreo = new javax.swing.JTextField();
         Cdireccion = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        m = new javax.swing.JRadioButton();
+        f = new javax.swing.JRadioButton();
+        jLabel25 = new javax.swing.JLabel();
         CMod = new javax.swing.JDialog();
         jLabel7 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
@@ -60,6 +67,9 @@ public class Main extends javax.swing.JFrame {
         Mdireccion = new javax.swing.JTextField();
         Mcontactos = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        M = new javax.swing.JRadioButton();
+        F = new javax.swing.JRadioButton();
         Celiminar = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
         Econtactos = new javax.swing.JComboBox<>();
@@ -87,7 +97,18 @@ public class Main extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         Mcontacto = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Ctabla = new javax.swing.JTable();
+        jButton13 = new javax.swing.JButton();
         Fecha = new javax.swing.JPanel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Ftabla = new javax.swing.JTable();
+        jButton14 = new javax.swing.JButton();
+        Ffecha = new com.toedter.calendar.JDateChooser();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -119,42 +140,56 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(m);
+        m.setSelected(true);
+        m.setText("M");
+
+        buttonGroup1.add(f);
+        f.setText("F");
+
+        jLabel25.setText("Genero");
+
         javax.swing.GroupLayout CcrearLayout = new javax.swing.GroupLayout(Ccrear.getContentPane());
         Ccrear.getContentPane().setLayout(CcrearLayout);
         CcrearLayout.setHorizontalGroup(
             CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CcrearLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addGroup(CcrearLayout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(Ctelefono))
+                        .addGroup(CcrearLayout.createSequentialGroup()
+                            .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(CcrearLayout.createSequentialGroup()
+                                    .addGap(12, 12, 12)
+                                    .addComponent(Cedad, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(CcrearLayout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(Cnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(CcrearLayout.createSequentialGroup()
+                            .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel5))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Ccorreo)
+                                .addComponent(Cdireccion))))
                     .addGroup(CcrearLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1)
+                        .addComponent(jLabel25)
+                        .addGap(42, 42, 42)
+                        .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(CcrearLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Ctelefono))
-                            .addGroup(CcrearLayout.createSequentialGroup()
-                                .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(CcrearLayout.createSequentialGroup()
-                                        .addGap(12, 12, 12)
-                                        .addComponent(Cedad, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(CcrearLayout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(Cnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(CcrearLayout.createSequentialGroup()
-                                .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Ccorreo)
-                                    .addComponent(Cdireccion)))))
-                    .addGroup(CcrearLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jButton5)))
+                                .addComponent(m)
+                                .addGap(18, 18, 18)
+                                .addComponent(f))
+                            .addComponent(jButton5))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         CcrearLayout.setVerticalGroup(
@@ -183,6 +218,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(Cdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CcrearLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(m)
+                    .addComponent(f)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -209,6 +249,15 @@ public class Main extends javax.swing.JFrame {
 
         jLabel13.setText("Contacto");
 
+        jLabel26.setText("Genero");
+
+        buttonGroup2.add(M);
+        M.setSelected(true);
+        M.setText("M");
+
+        buttonGroup2.add(F);
+        F.setText("F");
+
         javax.swing.GroupLayout CModLayout = new javax.swing.GroupLayout(CMod.getContentPane());
         CMod.getContentPane().setLayout(CModLayout);
         CModLayout.setHorizontalGroup(
@@ -216,43 +265,54 @@ public class Main extends javax.swing.JFrame {
             .addGroup(CModLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12)
-                    .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(CModLayout.createSequentialGroup()
-                            .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Mtelefono))
-                        .addGroup(CModLayout.createSequentialGroup()
-                            .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel8))
-                            .addGap(12, 12, 12)
-                            .addComponent(Medad, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(CModLayout.createSequentialGroup()
-                            .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel11)
-                                .addComponent(jLabel10))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Mcorreo, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                                .addComponent(Mdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(CModLayout.createSequentialGroup()
-                            .addComponent(jLabel13)
-                            .addGap(9, 9, 9)
-                            .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Mcontactos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Mnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CModLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Mtelefono))
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8))
+                                .addGap(12, 12, 12)
+                                .addComponent(Medad, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Mcorreo)
+                                    .addComponent(Mdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(9, 9, 9)
+                                .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(Mcontactos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Mnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(CModLayout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jButton6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addGap(81, 81, 81)
+                                .addComponent(jButton6))
+                            .addGroup(CModLayout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addGap(18, 18, 18)
+                                .addComponent(M)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(F)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         CModLayout.setVerticalGroup(
             CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CModLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Mcontactos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13))
@@ -277,6 +337,11 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel11)
                     .addComponent(Mdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CModLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(M)
+                    .addComponent(F))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jButton6)
                 .addGap(0, 0, 0))
         );
@@ -336,6 +401,9 @@ public class Main extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel17.setText("Nuevo Mensaje");
+
+        Memisor.setEnabled(false);
+        Memisor.setFocusable(false);
 
         jLabel18.setText("De:");
 
@@ -413,7 +481,7 @@ public class Main extends javax.swing.JFrame {
         );
 
         jLabel21.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel21.setText("Buzón de Mensajes");
+        jLabel21.setText("Buzón de Salida");
 
         jButton11.setText("Fecha");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -439,6 +507,31 @@ public class Main extends javax.swing.JFrame {
 
         jLabel24.setText("Contacto:");
 
+        Ctabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emisor", "Receptor", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(Ctabla);
+
+        jButton13.setText("Refrescar");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout ContactoLayout = new javax.swing.GroupLayout(Contacto);
         Contacto.setLayout(ContactoLayout);
         ContactoLayout.setHorizontalGroup(
@@ -446,12 +539,21 @@ public class Main extends javax.swing.JFrame {
             .addGroup(ContactoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ContactoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
                     .addGroup(ContactoLayout.createSequentialGroup()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Mcontacto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(18, 18, 18))
+                        .addGroup(ContactoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel22)
+                            .addGroup(ContactoLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Mcontacto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(ContactoLayout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(ContactoLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(jButton13)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         ContactoLayout.setVerticalGroup(
             ContactoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -462,20 +564,82 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(ContactoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
                     .addComponent(Mcontacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton13)
+                .addContainerGap())
         );
 
         Main.add(Contacto, "Contacto");
+
+        jLabel27.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel27.setText("Por Fecha");
+
+        jLabel28.setText("Fecha:");
+
+        Ftabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emisor", "Receptor", "Fecha"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(Ftabla);
+
+        jButton14.setText("Refrescar");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FechaLayout = new javax.swing.GroupLayout(Fecha);
         Fecha.setLayout(FechaLayout);
         FechaLayout.setHorizontalGroup(
             FechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(FechaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(FechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FechaLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel28)
+                        .addGap(18, 18, 18)
+                        .addComponent(Ffecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(FechaLayout.createSequentialGroup()
+                        .addGroup(FechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel27)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(FechaLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(jButton14)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         FechaLayout.setVerticalGroup(
             FechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
+            .addGroup(FechaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Ffecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton14)
+                .addContainerGap())
         );
 
         Main.add(Fecha, "Fecha");
@@ -511,7 +675,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButton12)
                     .addComponent(jLabel23))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -637,17 +801,17 @@ public class Main extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Mcontactos.setModel(new DefaultComboBoxModel());
-        DefaultComboBoxModel b=(DefaultComboBoxModel)Mcontactos.getModel();
+        DefaultComboBoxModel b = (DefaultComboBoxModel) Mcontactos.getModel();
         for (Contacto c : contactos) {
             b.addElement(c);
         }
         Mcontactos.setModel(b);
-        
+
         CMod.setModal(true);
         CMod.pack();
         CMod.setLocationRelativeTo(this);
         CMod.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -660,13 +824,19 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Contacto c=new Contacto(Cnombre.getText(),
+        String genero = "";
+        if (m.isSelected()) {
+            genero = "Masculino";
+        } else {
+            genero = "Femenino";
+        }
+        Contacto c = new Contacto(Cnombre.getText(),
                 Integer.parseInt(Cedad.getText()),
                 Integer.parseInt(Ctelefono.getText()),
-                Ccorreo.getText(),Cdireccion.getText());
+                Ccorreo.getText(), Cdireccion.getText(), genero);
         contactos.add(c);
         JOptionPane.showMessageDialog(Ccrear, "Contacto Creado Exitosamente");
-        
+
         Cnombre.setText("");
         Cedad.setText("");
         Ctelefono.setText("");
@@ -677,13 +847,20 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        Contacto contacto=(Contacto)Mcontactos.getSelectedItem();
+        String genero = "";
+        if (m.isSelected()) {
+            genero = "Masculino";
+        } else {
+            genero = "Femenino";
+        }
+        Contacto contacto = (Contacto) Mcontactos.getSelectedItem();
         contacto.setNombre(Mnombre.getText());
         contacto.setEdad(Integer.parseInt(Medad.getText()));
         contacto.setTelefono(Integer.parseInt(Mtelefono.getText()));
         contacto.setCorreo(Mcorreo.getText());
         contacto.setDireccion(Mdireccion.getText());
-        
+        contacto.setGenero(genero);
+
         JOptionPane.showMessageDialog(CMod, "Contacto Modificado Exitosamente");
         Mnombre.setText("");
         Medad.setText("");
@@ -691,18 +868,18 @@ public class Main extends javax.swing.JFrame {
         Mcorreo.setText("");
         Mdireccion.setText("");
         CMod.setVisible(false);
-        
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Econtactos.setModel(new DefaultComboBoxModel());
-        DefaultComboBoxModel b=(DefaultComboBoxModel)Econtactos.getModel();
+        DefaultComboBoxModel b = (DefaultComboBoxModel) Econtactos.getModel();
         for (Contacto c : contactos) {
             b.addElement(c);
         }
         Econtactos.setModel(b);
-        
+
         Celiminar.setModal(true);
         Celiminar.pack();
         Celiminar.setLocationRelativeTo(this);
@@ -711,25 +888,25 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        Contacto contacto=(Contacto)Mcontactos.getSelectedItem();
+        Contacto contacto = (Contacto) Mcontactos.getSelectedItem();
         contactos.remove(contacto);
         JOptionPane.showMessageDialog(Celiminar, "Contacto eliminado Exitosamente");
-        Celiminar.setVisible(false );
+        Celiminar.setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         Memisor.setModel(new DefaultComboBoxModel());
         Mreceptor.setModel(new DefaultComboBoxModel());
-        DefaultComboBoxModel e=(DefaultComboBoxModel)Memisor.getModel();
-        DefaultComboBoxModel r=(DefaultComboBoxModel)Mreceptor.getModel();
+        DefaultComboBoxModel e = (DefaultComboBoxModel) Memisor.getModel();
+        DefaultComboBoxModel r = (DefaultComboBoxModel) Mreceptor.getModel();
         for (Contacto c : contactos) {
-            e.addElement(c);
             r.addElement(c);
         }
+        e.addElement(administrador);
+        Mreceptor.setModel(r);
         Memisor.setModel(e);
-        Mreceptor.setModel(e);
-        
+
         Mmensaje.setModal(true);
         Mmensaje.pack();
         Mmensaje.setLocationRelativeTo(this);
@@ -738,26 +915,25 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        if (Memisor.getSelectedItem().equals(Mreceptor.getSelectedItem())){
-            JOptionPane.showMessageDialog(Mmensaje, "El receptor tiene que ser diferente al emisor");
-        }else{
-            Contacto emisor=(Contacto)Memisor.getSelectedItem();
-            Mensaje m=new Mensaje(emisor,(Contacto)Mreceptor.getSelectedItem(),Mfecha.getDate(),Mtexto.getText());
-            emisor.getBuzon().add(m);
-        }
-                
-                
+        DateFormat df=new SimpleDateFormat("MM/dd/yyyy");        
+        String date=df.format(Mfecha.getDate());
+        Mensaje mensaje = new Mensaje(administrador, (Contacto) Mreceptor.getSelectedItem(), date, Mtexto.getText());
+        administrador.getBuzon().add(mensaje);
+
+        Mtexto.setText("");
+        JOptionPane.showMessageDialog(Mmensaje, "Mensaje enviado");
+        Mmensaje.setVisible(false);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-       Mcontacto.setModel(new DefaultComboBoxModel());
-        DefaultComboBoxModel b=(DefaultComboBoxModel)Mcontacto.getModel();
+        Mcontacto.setModel(new DefaultComboBoxModel());
+        DefaultComboBoxModel b = (DefaultComboBoxModel) Mcontacto.getModel();
         for (Contacto c : contactos) {
             b.addElement(c);
         }
         Mcontacto.setModel(b);
-        
+
         Mbuzon.setModal(true);
         Mbuzon.pack();
         Mbuzon.setLocationRelativeTo(this);
@@ -766,7 +942,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        
+
         CardLayout card = (CardLayout) Main.getLayout();
         card.show(Main, "Contacto");
     }//GEN-LAST:event_jButton12ActionPerformed
@@ -776,6 +952,36 @@ public class Main extends javax.swing.JFrame {
         CardLayout card = (CardLayout) Main.getLayout();
         card.show(Main, "Fecha");
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel t = (DefaultTableModel) Ctabla.getModel();
+        while (t.getRowCount() > 0) {
+            t.removeRow(0);
+        }
+        for (Mensaje a : administrador.getBuzon()) {
+            Object[] o = {a.getEmisor(), a.getReceptor(), a.getFecha()};
+            if (a.getReceptor().equals((Contacto) Mcontacto.getSelectedItem())) {
+                t.addRow(o);
+            }
+        }
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        DateFormat df=new SimpleDateFormat("MM/dd/yyyy");        
+        String date=df.format(Ffecha.getDate());
+        DefaultTableModel t = (DefaultTableModel) Ftabla.getModel();
+        while (t.getRowCount() > 0) {
+            t.removeRow(0);
+        }
+        for (Mensaje a : administrador.getBuzon()) {
+            Object[] o = {a.getEmisor(), a.getReceptor(), a.getFecha()};
+            if (a.getFecha().equals(date)) {
+                t.addRow(o);
+            }
+        }
+    }//GEN-LAST:event_jButton14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -821,9 +1027,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JDialog Celiminar;
     private javax.swing.JTextField Cnombre;
     private javax.swing.JPanel Contacto;
+    private javax.swing.JTable Ctabla;
     private javax.swing.JTextField Ctelefono;
     private javax.swing.JComboBox<String> Econtactos;
+    private javax.swing.JRadioButton F;
     private javax.swing.JPanel Fecha;
+    private com.toedter.calendar.JDateChooser Ffecha;
+    private javax.swing.JTable Ftabla;
+    private javax.swing.JRadioButton M;
     private javax.swing.JPanel Main;
     private javax.swing.JDialog Mbuzon;
     private javax.swing.JComboBox<String> Mcontacto;
@@ -838,10 +1049,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> Mreceptor;
     private javax.swing.JTextField Mtelefono;
     private javax.swing.JTextArea Mtexto;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JRadioButton f;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -867,6 +1083,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -878,7 +1098,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTree jTree1;
+    private javax.swing.JRadioButton m;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Contacto> contactos=new ArrayList();
+    ArrayList<Contacto> contactos = new ArrayList();
+
+    Contacto administrador = new Contacto("Leonardo", 19, 95105400,
+            "leonardborj@gmail.com", "Col. America", "Masculino");
 }

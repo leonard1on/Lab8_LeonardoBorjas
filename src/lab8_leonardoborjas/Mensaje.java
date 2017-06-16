@@ -14,13 +14,13 @@ import java.util.Date;
 public class Mensaje {
     private Contacto emisor;
     private Contacto receptor;
-    private Date fecha;
+    private String fecha;
     private String contenido;
 
     public Mensaje() {
     }
 
-    public Mensaje(Contacto emisor, Contacto receptor, Date fecha, String contenido) {
+    public Mensaje(Contacto emisor, Contacto receptor, String fecha, String contenido) {
         this.emisor = emisor;
         this.receptor = receptor;
         this.fecha = fecha;
@@ -43,11 +43,11 @@ public class Mensaje {
         this.receptor = receptor;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
