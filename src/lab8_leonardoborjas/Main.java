@@ -112,6 +112,10 @@ public class Main extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         Llamada = new javax.swing.JDialog();
+        cb = new javax.swing.JComboBox<>();
+        jLabel29 = new javax.swing.JLabel();
+        jButton16 = new javax.swing.JButton();
+        jLabel30 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -123,6 +127,8 @@ public class Main extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jLabel31 = new javax.swing.JLabel();
+        jButton17 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Registrar Contacto");
@@ -683,15 +689,45 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel29.setText("Llamada");
+
+        jButton16.setText("Agregar");
+
+        jLabel30.setText("jLabel30");
+
         javax.swing.GroupLayout LlamadaLayout = new javax.swing.GroupLayout(Llamada.getContentPane());
         Llamada.getContentPane().setLayout(LlamadaLayout);
         LlamadaLayout.setHorizontalGroup(
             LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(LlamadaLayout.createSequentialGroup()
+                .addGroup(LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(LlamadaLayout.createSequentialGroup()
+                            .addGap(93, 93, 93)
+                            .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(LlamadaLayout.createSequentialGroup()
+                            .addGap(19, 19, 19)
+                            .addGroup(LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel29)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(LlamadaLayout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jButton16)))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         LlamadaLayout.setVerticalGroup(
             LlamadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 374, Short.MAX_VALUE)
+            .addGroup(LlamadaLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton16)
+                .addGap(58, 58, 58)
+                .addComponent(jLabel30)
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -756,7 +792,7 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -797,6 +833,21 @@ public class Main extends javax.swing.JFrame {
         );
 
         jButton15.setText("Llamada");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        jLabel31.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel31.setText("Sotaloh!");
+
+        jButton17.setText("Guardar Todo");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -806,19 +857,34 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addGap(38, 38, 38))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton17)
+                                .addGap(55, 55, 55))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel31)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton15)
-                .addContainerGap())
+                .addGap(50, 50, 50)
+                .addComponent(jButton17)
+                .addContainerGap(115, Short.MAX_VALUE))
         );
 
         pack();
@@ -1073,6 +1139,29 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        
+        cb.setModel(new DefaultComboBoxModel());
+        DefaultComboBoxModel b = (DefaultComboBoxModel) cb.getModel();
+        for (Contacto c : contactos) {
+            b.addElement(c);
+        }
+        cb.setModel(b);
+        
+        Llamada.setModal(true);
+        Llamada.pack();
+        Llamada.setLocationRelativeTo(this);
+        Llamada.setVisible(true);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        ad.setContactos(contactos);
+        ad.setMensajes(administrador.getBuzon());
+        ad.escribirArchivo();
+    }//GEN-LAST:event_jButton17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1143,6 +1232,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTree agenda;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cb;
     private javax.swing.JRadioButton f;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -1151,6 +1241,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1180,7 +1272,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1196,7 +1291,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton me;
     // End of variables declaration//GEN-END:variables
     ArrayList<Contacto> contactos = new ArrayList();
-
     Contacto administrador = new Contacto("Leonardo", 19, 95105400,
             "leonardborj@gmail.com", "Col. America", "Masculino");
+    Administrar ad=new Administrar("./Prueba.sota");
 }

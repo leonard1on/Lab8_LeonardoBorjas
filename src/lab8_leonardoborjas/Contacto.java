@@ -5,13 +5,16 @@
  */
 package lab8_leonardoborjas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Leonardo Borjas
  */
-public class Contacto {
+public class Contacto implements Serializable{
+    
+    private static long SerialVersionUID=666L;
     private String nombre;
     private int edad;
     private int telefono;
